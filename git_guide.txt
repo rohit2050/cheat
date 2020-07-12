@@ -1,0 +1,110 @@
+git config --global user.name "rg2hlo123"   #you can give any user name not necessary of ur account
+git config --global user.email "rg2_hlo123@gmail.com"
+git config --system core.editor "vim"  #setting up the editor if needed 
+
+
+#Initialization of repository
+#Creating the directory
+mkdir repo
+cd mkdir
+git init <location of current repo here it is . >
+git status #To check the curent status of local repo
+
+
+#If we wat to override global variables for a specific repo then use
+git config user.name "test"
+git config user.email "test123@gmail.com"
+
+
+#Adding data to git local repo
+git add <file name>
+git add .   #adding all files
+git add *   #adding all files
+
+
+#Commiting Files to repo
+git commit -m <this is a optional mesaage> "This is the initial comit to test for repo"
+
+
+#Removing file from git repo
+git rm <file_name>
+git commit -m <message>
+
+
+#checking logs 
+git log                    		#general check
+git log --oneline	  		#brief check
+git log -p 		  		#detailed check
+git log -- <name of file>	  	#for specific file 
+git log --oneline -- <file name>	#check in brief in specific file
+git log --author="user"     		#check for a specific user
+git log --grep="change"			#searcing for specic word in logs
+git log --graph --decorate		#geting details in decorative and colourful manner
+man git log				#to gat all details of commands
+
+
+#Cloning Repository
+git clone <path of the repo in local directory>
+git clone user@<ip or domain name>: location     #using ssh
+
+
+#Pushing the changes to online reposutory
+git push orign master			#Pushing master branch (origin means original)
+git push origin --all			#Pushing all branches
+
+
+#Ignoring files
+#Github is unable to track all sort of file like binary file , as these files are too complicated
+#So, we need to ignore them
+git config --global core.excludefile   				#if the file exist edit it otherwise creste it
+git config --global core.excludefile '/etc/gitignore'		#creating ignore file
+vim /etc/gitignore						#editing the gitignore file  "{" to specify file start and end
+{# globaly ignore compiled .out binary files
+ *.out
+}
+#We can also have locally git ignore file 
+touch .gitignore
+vim .gitignore
+{#locally ignoring .bak files
+ *.bak
+ 
+ #locally ignoring the temporary directory
+ temp/*
+}
+
+
+#Branching
+git branch 						#To check on which branch you are
+git branch <name of the branch want to create>		#Creating new branch
+git checkout <name of the branch>			#Changig ythe branch
+git checkout -b <name of the branch>			#create and switch at same time
+
+
+#Merging Branches
+git merge <branch name>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
